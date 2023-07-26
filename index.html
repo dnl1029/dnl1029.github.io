@@ -120,7 +120,7 @@
             <div class="row">
                  <div class="project no-image">
                     <div class="project-info">
-                        <h3>알림센터 일하는 방식 개선</h3>
+                        <h3>[알림센터 일하는 방식 개선]</h3>
                         <p>
                             ⦁  Mongo DB의 초기 인덱스 설계 미스로 불편하게 알림을 추적하고 있어, Background로 인덱스 리빌드 작업을 수행하여 알림 유실 없이 DB 개선
 			    <br>⦁  허가되지 않은 사용자의 알림요청을 막도록 시스템 단위로 api-key 발급, 인증/인가 체계 자동화
@@ -156,13 +156,13 @@
                     <div class="project-info">
                         <h3>Capa Simulation 관련 핵심 Oracle Table 파티션 전환</h3>
                         <p>
-                            ⦁  Mongo DB의 초기 인덱스 설계 미스로 불편하게 알림을 추적하고 있어, Background로 인덱스 리빌드 작업을 수행하여 알림 유실 없이 DB 개선
-			    <br>⦁  허가되지 않은 사용자의 알림요청을 막도록 시스템 단위로 api-key 발급, 인증/인가 체계 자동화
-			    <br>⦁  spring cloud config활용하여 config서버, 중앙저장소 구현하여 개발/QA/운영서버의 config 설정파일을 분리
-			    <br>⦁  Bitbucket Webhook, redis pub/sub을 통해 중앙저장소의 .yml파일 변경을 App Service단 Client에 자동 반영 구조 구현
-		            <br>⦁  spring sleuth, zipkin을 활용하여 인메모리 기반으로 마이크로서비스 분산 로그 추적 구현, ElasticSearch 연동 진행 중
-			    <br>⦁  현재 업무 R&R상 '알림 수집'을 담당하고 있으며, '알림 배포'를 담당하는 협업 부서에게도 spring sleuth, zipkin를 확대 적용 요청하여, 알림센터 전반의 분산 로그 추적을 구현 중
-			    <br>⦁  Legacy 담당자들과의 소통 채널 및 Confluence 운영을 통해 알림센터 일하는 방식 개선
+                            ⦁  대량의 데이터 삭제 이후, 조회, 변경, 삭제 등 모든 부분에서 성능이슈 발생
+			    <br>⦁  테이블 Move를 통한 Reorg 작업을 주기적으로 수행할수 없어, 데이터 삭제가 빈번하게 발생하는 대용량 테이블들의 파티션 전환을 검토
+			    <br>⦁  Biz Process 특성상 단순한 월별 파티션 구조로 전환이 불가능하여, 결합(Coomposite) 파티션 구조 적용
+			    <br>⦁  Range(WORK_YM) + Hash(SIMUL_VER) 파티션과 Range(WORK_YM) + List(단기/중기/장기) 파티션 구조를 비교 검토
+		            <br>⦁  Range + Hash 적용시 소스 수정 영향도가 매우 적은 장점이 있지만, 특정 월에 삭제 불가 Simulation 버전이 있을시 해당 월은 전체 삭제 불가능한 단점이 있음을 고려하여 미채택
+			    <br>⦁  Range + List 를 채택하여 비록 소스 수정 영향도가 크지만, 삭제 불가 Simulation 버전을 예외 파티션에 모아놓음으로써 DB 용량 확보가 충분히 가능한 점을 중점에 뒀고, 충분한 테스트/검증을 걸쳐 파티션 전환 수행
+			    <br>⦁  12개의 Simulation 핵심 테이블을 파티션 테이블 전환을 통해 Simulation 실행속도 15% 개선
                         </p>
                     </div>
                     <!-- End .project-info -->
