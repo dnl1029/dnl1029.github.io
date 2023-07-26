@@ -154,7 +154,7 @@
 
 		<div class="project no-image">
                     <div class="project-info">
-                        <h3>2021.01 ~ 2022.06 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Capa Simulation 핵심 Oracle Table 파티션 전환]</h3>
+                        <h3>2021.01 ~ 2021.06 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Capa Simulation 핵심 Oracle Table 파티션 전환]</h3>
                         <p>
                             ⦁  대량의 데이터 삭제 이후, 조회, 변경, 삭제 등 모든 부분에서 성능이슈 발생
 			    <br>⦁ &nbsp;테이블 Move를 통한 Reorg 작업을 주기적으로 수행할수 없어, 데이터 삭제가 빈번하게 발생하는 대용량 테이블들의 파티션 전환을 검토
@@ -172,15 +172,13 @@
 
 		<div class="project no-image">
                     <div class="project-info">
-                        <h3>2021.01 ~ 2022.06 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Capa Simulation 구축]</h3>
+                        <h3>2019.01 ~ 현재 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Capa Simulation 시스템 구축 및 정합성 개선]</h3>
                         <p>
-                            ⦁ &nbsp;Mongo DB의 초기 인덱스 설계 미스로 불편하게 알림을 추적하고 있어, Background로 인덱스 리빌드 작업을 수행하여 알림 유실 없이 DB 개선
-			    <br>⦁ &nbsp;허가되지 않은 사용자의 알림요청을 막도록 시스템 단위로 api-key 발급, 인증/인가 체계 자동화
-			    <br>⦁ &nbsp;spring cloud config활용하여 config서버, 중앙저장소 구현하여 개발/QA/운영서버의 config 설정파일을 분리
-			    <br>⦁ &nbsp;Bitbucket Webhook, redis pub/sub을 통해 중앙저장소의 .yml파일 변경을 App Service단 Client에 자동 반영 구조 구현
-		            <br>⦁ &nbsp;spring sleuth, zipkin을 활용하여 인메모리 기반으로 마이크로서비스 분산 로그 추적 구현, ElasticSearch 연동 진행 중
-			    <br>⦁ &nbsp;현재 업무 R&R상 '알림 수집'을 담당하고 있으며, '알림 배포'를 담당하는 협업 부서에게도 spring sleuth, zipkin를 확대 적용 요청하여, 알림센터 전반의 분산 로그 추적을 구현 중
-			    <br>⦁ &nbsp;Legacy 담당자들과의 소통 채널 및 Confluence 운영을 통해 알림센터 일하는 방식 개선
+                            ⦁ &nbsp;시스템 산출 투자 금액과 실제 장비투자금액과의 차이를 주기적으로 Monitoring
+			    <br>⦁ &nbsp;창고 장비 개조/재배치 Logic을 구현하여 투자비 절감
+			    <br>⦁ &nbsp;신규 FAB Open 시기 결정을 위해 장기 Simulation간 투자 비용 비교 기능 및 대시보드 구현 
+			    <br>⦁ &nbsp;보유대수 없이 Tech별 전환비용 산출 Process 구현
+		            <br>⦁ &nbsp;Simulation Data의 정합성을 검증할 수 있는 생산계획대비 과부족 지수를 구현
                         </p>
                     </div>
                     <!-- End .project-info -->
